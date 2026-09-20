@@ -72,24 +72,38 @@ Measured block-bootstrap: 200/200 refits converge; no boundary hits. Correlated
 residuals remain a documented limitation. README/model/validation/learning notes
 and compact reference reports are prepared.
 
-## Remaining milestones
+## Task 5: final QA
 
-1. Publish the verified Task 4 case-study/reporting checkpoint.
-2. Task 5: build wheel and sdist; verify clean installed API/CLI/full tests and
-   README commands; compare reproduction numerically; verify actual CI;
-   inspect final GitHub presentation; publish and verify v0.1.0.
+Completed and verified: sdist/wheel build, new-environment wheel installation,
+`site-packages` imports outside checkout, API and both CLI entry points, full
+reproduction, all README commands from a fresh clone, source archive contents,
+relative documentation links, repository/figure presentation and remote CI.
+**62 tests passed, 0 failed, 0 skipped. Ruff lint/format and pip dependency checks
+passed.** Four CI jobs passed: Linux Python 3.11–3.13 and Windows Python 3.12.
+Evidence: `docs/RELEASE_CHECKS.md`, GitHub Actions run `35517863663`.
 
-Latest verified GitHub checkpoint: `6198d9e3107cda81d89defd421e2f70423b1ff69`
-(Task 3). Task 4 additions are being published; verify remote HEAD before resuming.
-This field records an already verified predecessor, not a self-referential hash.
+The initial Windows CI run caught checkout line-ending conversion of the external
+source README. `.gitattributes` protects exact source bytes; the corrected Windows
+run passes with the original provenance assertion unchanged.
 
-Known scientific limitations: correlated residuals/model mismatch, unknown axis
-calibration uncertainty and instrument response, one experimental acquisition,
-no spatial map or physical-property inversion. No unresolved software failure
-at this checkpoint. Final clean-install/CI checks remain pending.
+## Final scope and publication
 
-Next action: publish Task 4 and proceed directly to release QA. GitHub writes
-use the authorized browser; do not repeat unavailable connector-write probes.
+The agreed scientific/software scope is complete. No essential implementation
+or validation task remains. Scientific limitations are retained: serial residual
+structure/model mismatch, unknown calibration uncertainty/instrument response,
+one measured acquisition, no spatial map or strain/doping/temperature inversion.
+Optional future work is documented in README and is not a release requirement.
+
+Latest verified GitHub checkpoint: `44515fd1ac2f237bc64befad318f813e72d486f0`
+(passing cross-platform CI). The final documentation commit is published after
+this checkpoint; verify current remote HEAD and its CI before creating the tag.
+This field intentionally records an already verified predecessor.
+
+Next action on resume: inspect GitHub release `v0.1.0`. If absent, wait for final
+commit CI and publish the tag/release on that exact passing commit. If present,
+verify its target and assets; no further Project 3 development is required.
+The GitHub release page is the authoritative publication record and avoids
+writing a self-referential commit hash into this file. Do not begin Project 4.
 
 ## Attribution
 
