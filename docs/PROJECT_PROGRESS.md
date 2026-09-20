@@ -1,5 +1,7 @@
 # Project 3 progress
 
+**COMPLETE — v0.1.0 published and verified on 2026-09-20.**
+
 Updated: 2026-09-20. Read this record and compare the local working tree with GitHub before resuming. Do not recreate the repository or redesign the agreed scope.
 
 ## Original objectives and scope
@@ -22,7 +24,7 @@ Small `src/raman_analysis` package: data validation/import, peak model/fitting, 
 
 Sojo-Gordillo et al., *Dataset for "Tuning the thermoelectric properties of boron-doped silicon nanowires integrated in a micro-harvester"*.
 
-Archive: `Tuning_the_TE_props_of_Si_NW_integrated_in_a_uTEG-Raw_Data.zip`; 202695944 bytes; published MD5 `57bcb52f239d66334791d5f73a9e495b`. The source describes tip-enhanced Raman maps as tabulated text. The downloaded archive matches the published MD5. Its 402 entries contain 175 CSV, 123 TIFF and 66 TXT files, all under transport/SEM folders; there are no Raman/TERS spectra. The archive README likewise describes only I-V and Seebeck data. This source is unsuitable for the measured Raman case despite its record description. Preserve this discrepancy; inspect a replacement measured silicon collection before implementing a dataset-specific importer. Do not invent measurement conditions.
+Archive: `Tuning_the_TE_props_of_Si_NW_integrated_in_a_uTEG-Raw_Data.zip`; 202695944 bytes; published MD5 `57bcb52f239d66334791d5f73a9e495b`. The source describes tip-enhanced Raman maps as tabulated text. The downloaded archive matches the published MD5. Its 402 entries contain 175 CSV, 123 TIFF and 66 TXT files, all under transport/SEM folders; there are no Raman/TERS spectra. The archive README likewise describes only I-V and Seebeck data. This source is unsuitable for the measured Raman case despite its record description. This discrepancy prompted the verified replacement below. The investigation is complete; do not repeat it or invent measurement conditions.
 
 ## Current verified dataset and implementation
 
@@ -32,7 +34,7 @@ Recherche Data Gouv DOI **10.12763/VUVLSZ**, version 1.0, CC0-1.0.
 There is one experimental spectrum (10,166 finite, ordered points); no spatial
 coordinates, calibration uncertainty or measured instrument response are supplied.
 No spatial map or unique strain/doping/temperature inference is supported.
-Batch processing will be verified separately on labelled synthetic files.
+Batch processing was verified separately on labelled synthetic files.
 
 Task 1 (recovery and feasibility) and Task 2 (repository scaffold) are complete.
 Task 3 is implemented and verified: strict import/audit, spike candidates retained
@@ -94,16 +96,29 @@ structure/model mismatch, unknown calibration uncertainty/instrument response,
 one measured acquisition, no spatial map or strain/doping/temperature inversion.
 Optional future work is documented in README and is not a release requirement.
 
-Latest verified GitHub checkpoint: `44515fd1ac2f237bc64befad318f813e72d486f0`
-(passing cross-platform CI). The final documentation commit is published after
-this checkpoint; verify current remote HEAD and its CI before creating the tag.
-This field intentionally records an already verified predecessor.
+## Verified release and continuity
 
-Next action on resume: inspect GitHub release `v0.1.0`. If absent, wait for final
-commit CI and publish the tag/release on that exact passing commit. If present,
-verify its target and assets; no further Project 3 development is required.
-The GitHub release page is the authoritative publication record and avoids
-writing a self-referential commit hash into this file. Do not begin Project 4.
+Published release: [v0.1.0](https://github.com/Atabrahim/semiconductor-raman-analysis/releases/tag/v0.1.0).
+The tag resolves to the final reviewed implementation commit
+`c25d388cb0f3926fb5a5751d040594b5b4b0a409`.
+All four jobs in [CI run 35518094851](https://github.com/Atabrahim/semiconductor-raman-analysis/actions/runs/35518094851)
+passed on that exact commit. The release is public, not a draft, and includes
+the tested wheel, source distribution and SHA256SUMS.txt. Asset digests were
+checked against the previously verified archives.
+
+Workspace maintenance removed the local checkout and environments after the
+previous interruption. The published source was recovered unchanged from the
+verified commit. The original release draft and tested archives also survived
+on GitHub, so no scientific implementation or dataset investigation was repeated.
+This post-release completion record changes documentation only; the immutable
+release remains attached to the tested implementation and its matching archives.
+
+Remaining required tasks: **none**. All original scientific/software milestones,
+validation, installation, documentation, visualization, CI and release checks are
+complete. The limitations above remain part of the result, not unfinished scope.
+Next action: study/reproduce the project when desired. Do not restart development
+or begin Project 4 without a new request. On future recovery, use the current
+GitHub default branch and verify the release tag before changing anything.
 
 ## Attribution
 

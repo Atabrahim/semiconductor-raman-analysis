@@ -19,10 +19,10 @@ explicitly synthetic verification, uncertainty/sensitivity, API/CLI and reportin
 | GitHub | Published source compared with local tree; preview images load; description/topics reviewed |
 | CI | All four jobs pass: Linux Python 3.11, 3.12, 3.13; Windows Python 3.12 |
 
-Verified CI checkpoint: [run 35517863663](https://github.com/Atabrahim/semiconductor-raman-analysis/actions/runs/35517863663),
-commit `44515fd1ac2f237bc64befad318f813e72d486f0`. Final documentation commits are
-also subject to the same workflow; the release tag must target its final passing
-commit. See the GitHub Actions page and release for that publication record.
+Verified CI checkpoint: [run 35518094851](https://github.com/Atabrahim/semiconductor-raman-analysis/actions/runs/35518094851),
+commit `c25d388cb0f3926fb5a5751d040594b5b4b0a409`, the verified `v0.1.0` tag target.
+All four jobs passed. The later completion-record commit changes documentation
+only and remains subject to the same CI workflow.
 
 The first CI run passed on Linux but failed the Windows source-README checksum
 because checkout changed line endings. `.gitattributes` now preserves both
@@ -41,5 +41,13 @@ correlated measured residuals, unknown calibration/instrument response, single
 acquisition and no supported property inversion or spatial mapping. Passing tests
 certify the stated software behaviour, not industrial metrology accuracy.
 
-Release procedure: tag `v0.1.0` only after CI passes on the final published commit;
-verify the tag target and GitHub release, and attach the corresponding sdist/wheel.
+Publication verified: [v0.1.0](https://github.com/Atabrahim/semiconductor-raman-analysis/releases/tag/v0.1.0)
+was published after the final implementation commit passed CI. The tag target
+matches `c25d388cb0f3926fb5a5751d040594b5b4b0a409`. The original tested assets
+were preserved in the GitHub draft and published without replacement:
+
+- Wheel SHA-256: `bc3bb0b9fc4391d74f65777c9bebe3dc1775515843c7401409db320ad5cb7a3a`
+- Source distribution SHA-256: `6f0b3079b7635ebea7e538c6be556464b28c44b412f84d17b73669390278d27d`
+- Checksum file SHA-256: `09cda26655e34f0766be092ff92e67bb23327792a5a6015fcc0f046e0891cfd9`
+
+No release task remains.
