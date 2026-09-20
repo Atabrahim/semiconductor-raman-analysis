@@ -54,23 +54,42 @@ inversion is claimed. Local recovery checkpoint `1cf0046` preserved all work
 before development resumed. All recovered files were verified byte-identical
 against GitHub checkpoint `def2a2ac880e47232a30beb742ce336be74e1f7a`.
 
+## Task 4: case study and reporting
+
+Implemented and verified: CLI, batch workflow, optional scientific plotting,
+JSON configuration, source metadata/audit, report protection, failed-file rows,
+CSV/JSON outputs, measured case, 18-choice sensitivity study, synthetic batch,
+and 100-trial Monte Carlo validation. **61 tests passed**, Ruff lint/format pass.
+The documented reproduction script ran at 200 refits; the installed CLI also ran.
+All three published scientific figures were visually inspected; crowded interval
+axis labels were corrected. Source data and measurements are never relabelled as
+synthetic, and synthetic demonstrations are never called additional experiments.
+
+Synthetic validation: centre RMSE 0.003965 cm^-1, centre bias 0.000183 cm^-1;
+92/100 local 95% intervals cover truth (Monte Carlo SE 0.027). These are checks
+under the generating assumptions, not an experimental calibration claim.
+Measured block-bootstrap: 200/200 refits converge; no boundary hits. Correlated
+residuals remain a documented limitation. README/model/validation/learning notes
+and compact reference reports are prepared.
+
 ## Remaining milestones
 
-1. Publish the verified Task 3 workflow and this record.
-2. Task 4: CLI, batch reports, reproducible measured case, figures and documentation.
-3. Task 5: full tests/lint, clean wheel/sdist installation, documented commands,
-   actual GitHub Actions verification and v0.1.0 release.
+1. Publish the verified Task 4 case-study/reporting checkpoint.
+2. Task 5: build wheel and sdist; verify clean installed API/CLI/full tests and
+   README commands; compare reproduction numerically; verify actual CI;
+   inspect final GitHub presentation; publish and verify v0.1.0.
 
-Latest verified GitHub checkpoint: `def2a2ac880e47232a30beb742ce336be74e1f7a`
-(recovered core/data/tests backup). Task 3 additions are being published; verify
-remote HEAD before resuming. This field intentionally
-records an already verified predecessor, not a self-referential commit hash.
+Latest verified GitHub checkpoint: `6198d9e3107cda81d89defd421e2f70423b1ff69`
+(Task 3). Task 4 additions are being published; verify remote HEAD before resuming.
+This field records an already verified predecessor, not a self-referential hash.
 
-Known scientific issue: serial residual structure/model mismatch in the measured
-spectrum. Quantify its effect without claiming bootstrap removes model bias.
-Next action: publish Task 3, then complete Task 4 batch/CLI/case-study outputs.
-GitHub write operations use the authorized browser; do not repeat unavailable
-repository-creation connector probes.
+Known scientific limitations: correlated residuals/model mismatch, unknown axis
+calibration uncertainty and instrument response, one experimental acquisition,
+no spatial map or physical-property inversion. No unresolved software failure
+at this checkpoint. Final clean-install/CI checks remain pending.
+
+Next action: publish Task 4 and proceed directly to release QA. GitHub writes
+use the authorized browser; do not repeat unavailable connector-write probes.
 
 ## Attribution
 
