@@ -1,12 +1,14 @@
 # Raman Spectroscopy Analysis with Uncertainty
 
+[![Scientific validation](https://github.com/Atabrahim/semiconductor-raman-analysis/actions/workflows/ci.yml/badge.svg)](https://github.com/Atabrahim/semiconductor-raman-analysis/actions/workflows/ci.yml)
+
 Analyse an experimental silicon Raman band with joint peak/background fitting, explicit quality flags and uncertainty that remains separate from model sensitivity.
 
 ![Measured silicon Raman spectrum with Voigt fit and residuals](figures/silicon_fit.png)
 
 **Measured case:** silicon wafer, 532 nm excitation, Kauffmann / LMOPS (2021), [DOI:10.12763/VUVLSZ](https://doi.org/10.12763/VUVLSZ), CC0-1.0. Points are experimental intensities; curves and background are fitted quantities. Residuals are measured minus fitted intensity. No smoothing or spike removal is applied in this case.
 
-**Status:** scientific workflow and case study verified; final packaging/CI release checks in progress. [Development record](docs/PROJECT_PROGRESS.md).
+**First-release scope complete (v0.1.0).** 62 tests pass; built-wheel installation, documented commands and four CI jobs are verified. [Release checks](docs/RELEASE_CHECKS.md) · [Development record](docs/PROJECT_PROGRESS.md).
 
 ## Why this project exists
 
@@ -108,7 +110,7 @@ Bounded trust-region least squares fits peak and background together. Log area/w
 - Batch/CLI tests cover failed inputs, duplicate names, output protection, report auditing and plotting.
 - A 100-trial synthetic Gaussian-noise study gives centre RMSE 0.00397 cm⁻¹ and local-interval coverage 92/100 (Monte Carlo SE 0.027). This verifies behaviour under declared assumptions, not experimental absolute accuracy.
 
-Current development checkpoint: **61 tests passed**. Final clean-install and remote-CI results will be recorded in [release checks](docs/RELEASE_CHECKS.md).
+**62 tests passed, 0 failed, 0 skipped** in the final clean-install checks. GitHub Actions verifies Linux Python 3.11, 3.12 and 3.13 and Windows Python 3.12. [Release-check evidence](docs/RELEASE_CHECKS.md).
 
 To run the development checks and build source/wheel distributions:
 
