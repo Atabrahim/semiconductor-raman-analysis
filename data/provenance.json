@@ -1,0 +1,52 @@
+{
+  "category": "EXPERIMENTAL MEASUREMENT",
+  "title": "Raman spectrum of silicon sample from 50 to 4000 cm-1",
+  "creator": "Thomas H. Kauffmann, LMOPS Spectroscopy Platform, Universit\u00e9 de Lorraine",
+  "doi": "10.12763/VUVLSZ",
+  "version": "1.0",
+  "license": "CC0-1.0",
+  "source_url": "https://entrepot.recherche.data.gouv.fr/dataset.xhtml?persistentId=doi:10.12763/VUVLSZ",
+  "measurement_date": "2021-11-25",
+  "retrieved": "2026-09-20",
+  "sample": "Silicon wafer supplied by HORIBA for Raman systems calibration",
+  "instrument": "HORIBA HR Evolution",
+  "excitation_nm": 532,
+  "temperature": "room temperature; numeric temperature not supplied",
+  "detector": "1024-pixel CCD cooled to -70 deg C",
+  "grating_lines_per_mm": 1800,
+  "objective": "100x Olympus",
+  "pinhole_um": 100,
+  "exposure_s": 1,
+  "accumulations": 1,
+  "polarization": "no (source wording)",
+  "shift_unit": "cm^-1",
+  "intensity_unit": "source instrument units; calibrated unit not specified",
+  "spatial_coordinates": null,
+  "number_of_measured_spectra": 1,
+  "calibration_uncertainty_cm1": null,
+  "instrument_linewidth_cm1": null,
+  "laser_power_mW": null,
+  "preprocessing": "None; file renamed without changing bytes. Local fit windows are selected by configuration.",
+  "files": [
+    {
+      "path": "silicon_raw.txt",
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/541937",
+      "bytes": 170440,
+      "md5": "4f3aa9b51edc471de3a540fc5b1ea340",
+      "sha256": "7eb5e56d0ada4bef5e546bd23f041e8bfcba4c2b8e3d7825e276928463a5d4d1"
+    },
+    {
+      "path": "SOURCE_README.txt",
+      "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/541935",
+      "bytes": 723,
+      "md5": "e6f335877d8f9c007aca5e503e22eac8",
+      "sha256": "6ae54f6c7b789a303b4b8f21d554dbceb7ad5bf5e698d606096d24c40042e578"
+    }
+  ],
+  "rejected_candidate": {
+    "doi": "10.5281/zenodo.5806684",
+    "archive_md5": "57bcb52f239d66334791d5f73a9e495b",
+    "inventory_entries": 402,
+    "reason": "Checksum-verified archive contains I-V/Seebeck/SEM data but no Raman spectra despite record description."
+  }
+}
