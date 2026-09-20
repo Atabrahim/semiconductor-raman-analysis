@@ -94,6 +94,8 @@ def fit_peak(
         raise ValueError("center bounds must be strictly inside an increasing fit window")
     if type(max_nfev) is not int or max_nfev < 1:
         raise ValueError("max_nfev must be a positive integer")
+    if type(exclude_spikes) is not bool:
+        raise ValueError("exclude_spikes must be boolean")
     mask = (spectrum.shift_cm1 >= lower_window) & (spectrum.shift_cm1 <= upper_window)
     indices = np.flatnonzero(mask)
     if len(indices) < 20:
@@ -133,6 +135,8 @@ def fit_peak(
         return peak, background
 
     edge = np.abs(coordinate) > 0.7
+    if np.count_nonzero(edge) < baseline_degree + 2:
+        raise ValueError("Insufficient observations in the outer fit-window wings")
     background_guess = np.polynomial.polynomial.polyfit(
         coordinate[edge], normalized[edge], baseline_degree
     )
@@ -231,6 +235,9 @@ def fit_peak(
         "center_cm1": float(parameters[1]),
         "gamma_cm1": gamma,
         "sigma_cm1": sigma,
+        "height_intensity": float(
+            np.exp(parameters[0]) * scale * voigt_profile(0, sigma, gamma)
+        ),
         **{
             f"baseline_c{j}": float(coefficient * scale)
             for j, coefficient in enumerate(parameters[n_shape:])
