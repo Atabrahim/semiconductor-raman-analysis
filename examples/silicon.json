@@ -1,0 +1,8 @@
+{
+  "model": "voigt",
+  "baseline_degree": 1,
+  "window_cm1": [495, 545],
+  "center_bounds_cm1": [510, 530],
+  "exclude_spikes": false,
+  "max_nfev": 2000
+}
