@@ -43,3 +43,47 @@ Models cover a single, isolated, approximately symmetric band within a specified
 - [Burke et al., Raman study of Fano interference in p-type doped silicon](https://arxiv.org/abs/0910.5244): why a symmetric line shape is not universally appropriate. Not a dataset validation for this release.
 
 Equations and code are independently implemented; no external repository code is copied.
+
+## Uncertainty and sensitivity
+
+`bootstrap_fit` subtracts the mean residual and multiplies by sqrt(N/(N-p)),
+where p is the number of free peak/background coefficients. It samples random
+starting channels with replacement, concatenates circular blocks of length l,
+and truncates to N channels. l=1 is independent residual resampling; l>1 retains
+short-range correlation in channel order. Each artificial spectrum is the fitted
+curve plus resampled residuals, and is refitted with the original configuration
+and retained-observation mask. No new spike exclusion occurs during resampling.
+Percentile endpoints use the requested confidence (default 95%). The same refits
+provide intervals for centre, observed FWHM, integrated area, peak height, shape
+widths and baseline coefficients. Lorentzian sigma=0 is fixed; its zero-width
+interval is not a measured Gaussian-width precision.
+
+Failures and boundary hits are counted; boundary-hit solutions are included.
+Intervals are withheld if fewer than 80% of requested refits converge. A fixed
+seed reproduces the random resamples within a supported numerical environment;
+small floating-point differences across library/platform versions are expected.
+200 resamples are a demonstrator budget, not high-precision tail estimation.
+
+Residual bootstrap assumes a sufficiently correct mean model. Circular blocks
+add a local stationarity assumption and an arbitrary end-to-start join. They do
+not correct model bias, heteroscedastic detector noise, calibration, missing
+instrument response or selection bias. Block length is in retained channels,
+not cm^-1; irregular axes or excluded channels require particular care. The
+measured case compares lengths 1 and 5 as a **sensitivity study**, not a uniquely
+optimal error model. General block-resampling background: H. R. Künsch (1989),
+*The jackknife and the bootstrap for general stationary observations*, Annals of
+Statistics 17, 1217–1241; see the [author's publication record](https://people.math.ethz.ch/~kuensch/papers/).
+
+The default 495–545 cm^-1 window isolates the observed first-order silicon band
+and includes both wings. Centre bounds 510–530 cm^-1 define the targeted band;
+they are not a calibration reference. Windows 490–550 and 500–540 cm^-1, background
+degrees 0–2 and both symmetric line shapes are declared sensitivity choices.
+Only equal-data fits can be ranked by AICc. Window sensitivity is reported as
+estimates/ranges without cross-window AICc ranking. Choices are not optimized to
+force a literature peak position. These ranges are not probability intervals.
+
+All reported widths include instrumental broadening. Integrated area is the
+model's entire positive peak area extrapolated beyond the fitted window;
+height is the background-free model value at its centre. Neither is an absolute
+Raman cross section. Spike indices refer to the validated ascending `Spectrum`
+arrays (zero-based); source text row removal/reversal is separately audited.

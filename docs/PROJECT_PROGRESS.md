@@ -35,34 +35,40 @@ No spatial map or unique strain/doping/temperature inference is supported.
 Batch processing will be verified separately on labelled synthetic files.
 
 Task 1 (recovery and feasibility) and Task 2 (repository scaffold) are complete.
-Task 3 is in progress: strict import/audit, spike candidates retained by default,
-positive Lorentzian/Voigt models, bounded joint peak/background fitting,
-SVD covariance, AICc and residual/quality diagnostics are implemented.
-**38 tests passed** on recovery (Python 3.12); independent numerical convolution,
-analytic limits, known-parameter recovery, input validation and scale invariance
-are covered. Local checkpoint `1cf0046` preserves the complete recovered work.
+Task 3 is implemented and verified: strict import/audit, spike candidates retained
+by default, Lorentzian/Voigt joint background fitting, SVD covariance, AICc with
+same-data enforcement, residual/QC flags, fixed-mask residual/block bootstrap for
+all reported parameters, and declared background/line-shape/window sensitivity.
 
-Initial measured fits yield centres near 520.515 cm^-1 and observed widths around
-3.48--3.54 cm^-1, depending on line shape. Residual correlation is flagged; the
-working independent-noise likelihood does not capture all observed structure.
-These are conditional fit results, not independently calibrated material properties.
+**54 tests passed** (Python 3.12). Ruff lint and formatting pass. Tests include
+independent convolution, analytic limits, known-parameter recovery, input checks,
+scale invariance, bootstrap reproducibility, covariance-scale agreement under
+independent Gaussian noise, wider intervals for a controlled correlated-noise
+case, counted refit failures and prevention of invalid cross-window AICc ranking.
+Real-data bootstrap and the 18-choice sensitivity study were also executed.
+
+The measured Voigt/linear fit has centre near 520.515 cm^-1 and observed FWHM
+near 3.541 cm^-1. Residual correlation is flagged. Conditional intervals exclude
+axis calibration, instrumental response and model bias; no material-property
+inversion is claimed. Local recovery checkpoint `1cf0046` preserved all work
+before development resumed. All recovered files were verified byte-identical
+against GitHub checkpoint `def2a2ac880e47232a30beb742ce336be74e1f7a`.
 
 ## Remaining milestones
 
-1. Finish Task 3: bootstrap uncertainty for all reported peak/background quantities,
-   same-data model comparison, window/background sensitivity and scientific tests.
+1. Publish the verified Task 3 workflow and this record.
 2. Task 4: CLI, batch reports, reproducible measured case, figures and documentation.
 3. Task 5: full tests/lint, clean wheel/sdist installation, documented commands,
    actual GitHub Actions verification and v0.1.0 release.
 
-Latest verified GitHub checkpoint: `b453812ef18413b9d5ae63f6d378c10a2d6e981f`
-(scaffold/package initializer). Core code, tests and dataset are being published in
-recovery commits; verify remote HEAD before resuming. This field intentionally
+Latest verified GitHub checkpoint: `def2a2ac880e47232a30beb742ce336be74e1f7a`
+(recovered core/data/tests backup). Task 3 additions are being published; verify
+remote HEAD before resuming. This field intentionally
 records an already verified predecessor, not a self-referential commit hash.
 
 Known scientific issue: serial residual structure/model mismatch in the measured
 spectrum. Quantify its effect without claiming bootstrap removes model bias.
-Next action: finish publishing the recovered checkpoint, then implement uncertainty.
+Next action: publish Task 3, then complete Task 4 batch/CLI/case-study outputs.
 GitHub write operations use the authorized browser; do not repeat unavailable
 repository-creation connector probes.
 
