@@ -1,0 +1,176 @@
+{
+  "software_version": "0.1.0",
+  "fit_configuration": {
+    "model": "voigt",
+    "baseline_degree": 1,
+    "window_cm1": [
+      495,
+      545
+    ],
+    "center_bounds_cm1": [
+      510,
+      530
+    ],
+    "exclude_spikes": false,
+    "max_nfev": 2000
+  },
+  "n_resamples": 200,
+  "block_size": 5,
+  "seed": 2026,
+  "interpretation": "Conditional model estimates; no strain/doping inversion",
+  "files": [
+    {
+      "input": "silicon_raw.txt",
+      "id": "000_silicon_raw",
+      "status": "warning",
+      "audit": [
+        "source_sha256=7eb5e56d0ada4bef5e546bd23f041e8bfcba4c2b8e3d7825e276928463a5d4d1",
+        "explicit_header_rows_skipped=0"
+      ],
+      "metadata": {
+        "category": "EXPERIMENTAL MEASUREMENT",
+        "title": "Raman spectrum of silicon sample from 50 to 4000 cm-1",
+        "creator": "Thomas H. Kauffmann, LMOPS Spectroscopy Platform, Universit\u00e9 de Lorraine",
+        "doi": "10.12763/VUVLSZ",
+        "version": "1.0",
+        "license": "CC0-1.0",
+        "source_url": "https://entrepot.recherche.data.gouv.fr/dataset.xhtml?persistentId=doi:10.12763/VUVLSZ",
+        "measurement_date": "2021-11-25",
+        "retrieved": "2026-09-20",
+        "sample": "Silicon wafer supplied by HORIBA for Raman systems calibration",
+        "instrument": "HORIBA HR Evolution",
+        "excitation_nm": 532,
+        "temperature": "room temperature; numeric temperature not supplied",
+        "detector": "1024-pixel CCD cooled to -70 deg C",
+        "grating_lines_per_mm": 1800,
+        "objective": "100x Olympus",
+        "pinhole_um": 100,
+        "exposure_s": 1,
+        "accumulations": 1,
+        "polarization": "no (source wording)",
+        "shift_unit": "cm^-1",
+        "intensity_unit": "source instrument units; calibrated unit not specified",
+        "spatial_coordinates": null,
+        "number_of_measured_spectra": 1,
+        "calibration_uncertainty_cm1": null,
+        "instrument_linewidth_cm1": null,
+        "laser_power_mW": null,
+        "preprocessing": "None; file renamed without changing bytes. Local fit windows are selected by configuration.",
+        "files": [
+          {
+            "path": "silicon_raw.txt",
+            "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/541937",
+            "bytes": 170440,
+            "md5": "4f3aa9b51edc471de3a540fc5b1ea340",
+            "sha256": "7eb5e56d0ada4bef5e546bd23f041e8bfcba4c2b8e3d7825e276928463a5d4d1"
+          },
+          {
+            "path": "SOURCE_README.txt",
+            "download_url": "https://entrepot.recherche.data.gouv.fr/api/access/datafile/541935",
+            "bytes": 723,
+            "md5": "e6f335877d8f9c007aca5e503e22eac8",
+            "sha256": "6ae54f6c7b789a303b4b8f21d554dbceb7ad5bf5e698d606096d24c40042e578"
+          }
+        ],
+        "rejected_candidate": {
+          "doi": "10.5281/zenodo.5806684",
+          "archive_md5": "57bcb52f239d66334791d5f73a9e495b",
+          "inventory_entries": 402,
+          "reason": "Checksum-verified archive contains I-V/Seebeck/SEM data but no Raman spectra despite record description."
+        }
+      },
+      "fit": {
+        "model": "voigt",
+        "baseline_degree": 1,
+        "parameters": {
+          "area_intensity_cm1": 136759.5460696436,
+          "center_cm1": 520.5153532663401,
+          "gamma_cm1": 1.6476258654250229,
+          "sigma_cm1": 0.38219368558599554,
+          "height_intensity": 25183.088446427384,
+          "baseline_c0": 90.66088436966064,
+          "baseline_c1": 74.7121873346773
+        },
+        "center_cm1": 520.5153532663401,
+        "fwhm_cm1": 3.5405287478735112,
+        "center_se_cm1": 0.0018997539284207358,
+        "fwhm_se_cm1": 0.00735920595127847,
+        "rss": 202637.9877784257,
+        "aicc": 789.8002505753758,
+        "residual_sd": 45.94357814419698,
+        "lag1_correlation": 0.6072434020797963,
+        "snr": 542.996042209842,
+        "flags": [
+          "correlated_residuals_or_model_mismatch"
+        ],
+        "config": {
+          "model": "voigt",
+          "baseline_degree": 1,
+          "window_cm1": [
+            495,
+            545
+          ],
+          "center_bounds_cm1": [
+            510,
+            530
+          ],
+          "exclude_spikes": false,
+          "max_nfev": 2000
+        },
+        "n_points": 102,
+        "spike_indices": [],
+        "excluded_indices": []
+      },
+      "uncertainty": {
+        "method": "circular residual block bootstrap",
+        "n_requested": 200,
+        "n_successful": 200,
+        "block_size_channels": 5,
+        "seed": 2026,
+        "confidence": 0.95,
+        "intervals": {
+          "area_intensity_cm1": [
+            135938.1644721558,
+            137487.80608424314
+          ],
+          "center_cm1": [
+            520.5105218225824,
+            520.5203836272983
+          ],
+          "gamma_cm1": [
+            1.624995630399765,
+            1.6709065083012886
+          ],
+          "sigma_cm1": [
+            0.34101056170521254,
+            0.41598763375761844
+          ],
+          "height_intensity": [
+            25100.42532582866,
+            25267.74582096816
+          ],
+          "baseline_c0": [
+            71.76779098496714,
+            109.64075144743225
+          ],
+          "baseline_c1": [
+            49.77544909356261,
+            102.59819495193258
+          ],
+          "fwhm_cm1": [
+            3.5230885378324954,
+            3.558877120283867
+          ]
+        },
+        "failed_refits": {},
+        "boundary_refits": 0,
+        "flags": [
+          "conditional_on_correlated_residuals_or_model_mismatch"
+        ],
+        "includes_calibration_uncertainty": false,
+        "includes_model_selection_uncertainty": false,
+        "mask": "held fixed from original fit; no new spike removal during resampling"
+      }
+    }
+  ]
+}

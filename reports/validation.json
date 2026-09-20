@@ -1,0 +1,15 @@
+{
+  "category": "SYNTHETIC VALIDATION; not experimental accuracy",
+  "trials": 100,
+  "seed": 931,
+  "independent_gaussian_noise_sd": 1.5,
+  "center_bias_cm1": 0.00018267701331865283,
+  "center_rmse_cm1": 0.003965323499461123,
+  "fwhm_bias_cm1": 3.0066364132208532e-06,
+  "local_95_percent_center_interval_coverage": 0.92,
+  "coverage_monte_carlo_se": 0.027129319932501065,
+  "spike_excluded_center_cm1": 521.0023951853501,
+  "spike_excluded_indices": [
+    48
+  ]
+}

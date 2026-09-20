@@ -1,0 +1,4 @@
+input,status,center_cm1,fwhm_cm1,area_intensity_cm1,flags,true_center_cm1,true_fwhm_cm1,true_area_intensity_cm1,category
+synthetic_0_clean.txt,ok,519.900325807289,2.3883306910963604,1199.3418374116063,,519.9,2.4,1200,SYNTHETIC DEMONSTRATION
+synthetic_1_clean.txt,ok,520.4053956688108,2.999896974328541,1205.3712828722576,,520.4,3.0,1200,SYNTHETIC DEMONSTRATION
+synthetic_2_spike.txt,warning,521.0064970220521,2.4784115402187648,1130.9289669824343,spike_candidates_retained;low_signal_to_residual_noise,521.0,2.6,1200,SYNTHETIC DEMONSTRATION

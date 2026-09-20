@@ -1,0 +1,50 @@
+{
+  "method": "circular residual block bootstrap",
+  "n_requested": 200,
+  "n_successful": 200,
+  "block_size_channels": 1,
+  "seed": 2026,
+  "confidence": 0.95,
+  "intervals": {
+    "area_intensity_cm1": [
+      136197.93857446229,
+      137230.57401574432
+    ],
+    "center_cm1": [
+      520.5117101695232,
+      520.5190796252849
+    ],
+    "gamma_cm1": [
+      1.6305587601193297,
+      1.6647786952570962
+    ],
+    "sigma_cm1": [
+      0.34885809423004466,
+      0.4143338791613165
+    ],
+    "height_intensity": [
+      25124.297418727467,
+      25246.267346086508
+    ],
+    "baseline_c0": [
+      79.19756938351881,
+      105.33741197154569
+    ],
+    "baseline_c1": [
+      58.163150714284875,
+      91.27191589569425
+    ],
+    "fwhm_cm1": [
+      3.526692199555687,
+      3.5561192042771266
+    ]
+  },
+  "failed_refits": {},
+  "boundary_refits": 0,
+  "flags": [
+    "conditional_on_correlated_residuals_or_model_mismatch"
+  ],
+  "includes_calibration_uncertainty": false,
+  "includes_model_selection_uncertainty": false,
+  "mask": "held fixed from original fit; no new spike removal during resampling"
+}
